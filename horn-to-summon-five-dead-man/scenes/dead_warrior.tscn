@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjws8v3g8ry2u"]
+[gd_scene load_steps=11 format=3 uid="uid://cjws8v3g8ry2u"]
 
 [ext_resource type="Script" uid="uid://dicq6ypr4wos4" path="res://scripts/dead_warrior.gd" id="1_vf4s7"]
 [ext_resource type="Texture2D" uid="uid://sqxq2o8uchcv" path="res://assets/Warrior.png" id="2_b8k4m"]
+[ext_resource type="AudioStream" uid="uid://c5k76jfccft0y" path="res://assets/sword sound.wav" id="3_xh5l0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8k4m"]
 radius = 488.1813
@@ -79,7 +80,9 @@ radius = 60.0
 height = 122.0
 
 [node name="DeadWarrior" type="CharacterBody2D" groups=["warrior"]]
+collision_mask = 7
 script = ExtResource("1_vf4s7")
+attack_range = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.71875, 1.71875)
@@ -105,6 +108,7 @@ libraries = {
 }
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xh5l0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b8k4m")

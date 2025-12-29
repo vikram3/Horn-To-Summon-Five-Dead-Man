@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ab3rsa8huwh"]
+
+[ext_resource type="Script" uid="uid://box1we7eglgnh" path="res://scripts/projectile.gd" id="1_6c2e5"]
+[ext_resource type="Texture2D" uid="uid://cw23tlin5gfkb" path="res://assets/06/Arcane_Effect_2.png" id="3_ejmht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c2e5"]
+
+[node name="Projectile" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_6c2e5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ejmht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6c2e5")
+
+[node name="Trail" type="Line2D" parent="."]

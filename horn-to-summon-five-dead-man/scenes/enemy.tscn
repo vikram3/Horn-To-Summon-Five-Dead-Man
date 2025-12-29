@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://i1jr0igpd6c"]
+[gd_scene load_steps=10 format=3 uid="uid://i1jr0igpd6c"]
 
 [ext_resource type="Script" uid="uid://bbc71p770r20b" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="PackedScene" uid="uid://b6ab3rsa8huwh" path="res://scenes/projectile.tscn" id="2_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://7wuy7ivyyrbl" path="res://assets/soulless_mage_.png" id="2_md0e3"]
 
 [sub_resource type="Animation" id="Animation_5uy6h"]
@@ -96,25 +97,25 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_md0e3"]
-radius = 62.0
-height = 132.0
+radius = 32.0
+height = 64.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_7p1mj")
+chase_range = 500.0
+max_health = 200.0
+projectile_scene = ExtResource("2_4ra3w")
 
 [node name="Sprite2Dsad" type="Sprite2D" parent="."]
 modulate = Color(0.15294118, 0.15294118, 0.15294118, 0.28235295)
 z_index = -1
-scale = Vector2(0.35820898, 0.08533917)
 texture = ExtResource("2_md0e3")
-centered = false
 flip_h = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-58, -63.999996)
-scale = Vector2(0.27571118, 0.27571115)
 texture = ExtResource("2_md0e3")
-centered = false
 flip_h = true
 
 [node name="AttackTimer" type="Timer" parent="."]
@@ -126,3 +127,5 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_md0e3")
+
+[node name="ProjectileSpawn" type="Marker2D" parent="."]

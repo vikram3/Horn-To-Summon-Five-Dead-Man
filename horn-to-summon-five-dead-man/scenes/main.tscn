@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c4hjofayu7ru6" path="res://assets/TileableBackGround.png" id="7_tipki"]
 
 [node name="Main" type="Node2D"]
+metadata/_edit_vertical_guides_ = [2259.0, -951.0]
+metadata/_edit_horizontal_guides_ = [-853.0, 1624.0]
 
 [node name="TileableBackGround" type="Sprite2D" parent="."]
 z_index = -2
@@ -26,14 +28,14 @@ enemy_scene = ExtResource("3_jyhfs")
 
 [node name="SpawnTimer" type="Timer" parent="GameManager"]
 
-[node name="DeadWarrior" parent="." instance=ExtResource("2_sugp2")]
-position = Vector2(942, 225)
-
-[node name="Enemy" parent="." instance=ExtResource("3_jyhfs")]
-position = Vector2(174, 482)
-
 [node name="Player" parent="." instance=ExtResource("4_tbgi4")]
 position = Vector2(576, 354)
+
+[node name="Camera2D" parent="Player" index="4"]
+limit_left = -651
+limit_top = -468
+limit_right = 1974
+limit_bottom = 1329
 
 [node name="Ui" parent="." instance=ExtResource("5_tefeu")]
 
@@ -42,3 +44,5 @@ stream = ExtResource("7_o6xl0")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
+
+[editable path="Player"]

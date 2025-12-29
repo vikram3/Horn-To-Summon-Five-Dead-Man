@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cqp67ehku5d5j"]
 
 [ext_resource type="Script" uid="uid://dt0x1757l4cbd" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://baj5yym5xabl3" path="res://assets/mage-NESW.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://7wuy7ivyyrbl" path="res://assets/soulless_mage_.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://8dq5h8gjanoa" path="res://assets/medieval_drinking_horn_spin.png" id="3_dqkch"]
 [ext_resource type="AudioStream" uid="uid://s1xh3xmhjwey" path="res://assets/theircoming3.ogg" id="3_qhqgy"]
 
@@ -50,24 +50,20 @@ collision_mask = 6
 script = ExtResource("1_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_g2els")
-hframes = 3
-vframes = 4
+texture = ExtResource("2_qlg0r")
 
 [node name="HornSprite" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(15.830976, -8.080482)
+position = Vector2(15.831, -116)
 scale = Vector2(0.22195256, 0.22195254)
 texture = ExtResource("3_dqkch")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
-modulate = Color(0, 0, 0, 0.27058825)
+modulate = Color(0.22670749, 0.22670749, 0.22670746, 0.33333334)
 z_index = -1
-position = Vector2(4.8509736, 7.7663713)
-scale = Vector2(1.3210618, 0.4853982)
-texture = ExtResource("2_g2els")
-hframes = 3
-vframes = 4
+position = Vector2(12, 40)
+scale = Vector2(1, 0.3200006)
+texture = ExtResource("2_qlg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g2els")

@@ -26,7 +26,7 @@ func _ready():
 	attack_timer.timeout.connect(_on_attack_ready)
 	
 	# Enemy color tint
-	sprite.modulate = Color(1.0, 0.5, 0.5)
+	#sprite.modulate = Color(1.0, 0.5, 0.5)
 	
 	# Create projectile spawn if it doesn't exist
 	if not has_node("ProjectileSpawn"):
@@ -153,7 +153,7 @@ func take_damage(amount: float):
 	tween.tween_property(sprite, "modulate", Color.WHITE, 0.08)
 	tween.tween_property(sprite, "rotation", 0.3, 0.08)
 	tween.tween_property(sprite, "position:x", sprite.position.x + 5, 0.08)
-	tween.chain().tween_property(sprite, "modulate", Color(1.0, 0.5, 0.5), 0.08)
+	#tween.chain().tween_property(sprite, "modulate", Color(1.0, 0.5, 0.5), 0.08)
 	tween.parallel().tween_property(sprite, "rotation", -0.1, 0.08)
 	tween.parallel().tween_property(sprite, "position:x", sprite.position.x, 0.08)
 	tween.chain().tween_property(sprite, "rotation", 0.0, 0.15)

@@ -9,6 +9,7 @@ var player: Node2D
 var score: int = 0
 
 func _ready():
+	add_to_group("ui")
 	player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.warrior_count_changed.connect(_on_warrior_count_changed)

@@ -162,6 +162,11 @@ func take_damage(amount: float):
 		die()
 
 func die():
+	# Notify UI about kill
+	var ui = get_tree().get_first_node_in_group("ui")
+	if ui and ui.has_method("add_score"):
+		ui.add_score(10)  # Award 10 points per kill
+	
 	# Death animation - dramatic fall
 	var tween = create_tween()
 	tween.set_parallel(true)

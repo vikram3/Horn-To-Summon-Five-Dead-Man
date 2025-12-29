@@ -1,40 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjws8v3g8ry2u"]
 
 [ext_resource type="Script" uid="uid://dicq6ypr4wos4" path="res://scripts/dead_warrior.gd" id="1_vf4s7"]
-[ext_resource type="Texture2D" uid="uid://c7y7dnw7aetcn" path="res://icon.svg" id="2_b8k4m"]
+[ext_resource type="Texture2D" uid="uid://sqxq2o8uchcv" path="res://assets/Warrior.png" id="2_b8k4m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8k4m"]
-radius = 83.48653
-
-[sub_resource type="Animation" id="Animation_b8k4m"]
-resource_name = "death"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 1]
-}
-
-[sub_resource type="Animation" id="Animation_xh5l0"]
-resource_name = "hit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 1]
-}
+radius = 488.1813
 
 [sub_resource type="Animation" id="Animation_dc6gc"]
 length = 0.001
@@ -66,6 +36,36 @@ tracks/0/keys = {
 "values": [1, 1]
 }
 
+[sub_resource type="Animation" id="Animation_b8k4m"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_xh5l0"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rqihr"]
 _data = {
 &"RESET": SubResource("Animation_dc6gc"),
@@ -82,7 +82,14 @@ height = 122.0
 script = ExtResource("1_vf4s7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.69803923, 0.48235294, 0, 1)
+scale = Vector2(1.71875, 1.71875)
+texture = ExtResource("2_b8k4m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0.21568628, 0.21568628, 0.21568628, 0.2509804)
+z_index = -1
+position = Vector2(8.436363, 19.490908)
+scale = Vector2(1.2636364, 0.39090908)
 texture = ExtResource("2_b8k4m")
 
 [node name="AttackTimer" type="Timer" parent="."]

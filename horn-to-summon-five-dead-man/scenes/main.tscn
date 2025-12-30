@@ -25,7 +25,6 @@ polygon = PackedVector2Array(-1548, -1192, 1563, -1188, 1544, 1179, -1562, 1192,
 script = ExtResource("1_o5qli")
 warrior_scene = ExtResource("2_sugp2")
 enemy_scene = ExtResource("3_jyhfs")
-enemy_spawn_interval = 2.5
 
 [node name="SpawnTimer" type="Timer" parent="GameManager"]
 
